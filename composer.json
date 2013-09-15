@@ -1,0 +1,25 @@
+{
+    "name": "codeoasis/curl-bundle",
+    "description": "Provide php-curl as a Symfony2 service",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "~2.1",
+        "ext-curl": "*"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ronen Amiel",
+            "email": "ronena@codeoasis.com"
+        },
+        {
+            "name": "Jonathan Bensaid",
+            "email": "jonathan@codeoasis.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-0": {"CodeOasis\\cUrlBundle": ""}
+    },
+    "target-dir": "CodeOasis/cUrlBundle"
+}
