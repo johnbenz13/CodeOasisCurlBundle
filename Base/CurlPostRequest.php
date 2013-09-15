@@ -1,23 +1,17 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: ronena
- * Date: 8/26/12
- * Time: 9:02 AM
- * To change this template use File | Settings | File Templates.
- */
 
-namespace cUrl\HttpBundle\Base;
+namespace CodeOasis\CurlBundle\Base;
 
 /**
- * Defines a cUrl POST request
+ * Defines a Curl POST request
  *
- * @author ronena
+ * @author Ronen Amiel <ronena@codeoasis.com>
  */
-class cUrlPostRequest extends cUrlRequest
+class CurlPostRequest extends cUrlRequest
 {
     /**
      * @param mixed $ch
+     *
      * @return mixed
      */
     protected function doExecute($ch)

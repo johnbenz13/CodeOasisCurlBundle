@@ -1,6 +1,6 @@
 <?php
 
-namespace cUrl\HttpBundle\DependencyInjection;
+namespace CodeOasis\CurlBundle\DependencyInjection;
 
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
@@ -18,31 +18,19 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('c_url_http');
+        $rootNode = $treeBuilder->root('code_oasis_curl');
 
         $rootNode
             ->children()
-            ->scalarNode('class')
-            ->defaultValue('cUrl\HttpBundle\Base\cUrlService')
-            ->end()
-            ->arrayNode('config')
-            ->children()
-            ->scalarNode('getRequestClass')
-            ->isRequired()
-            ->end()
-            ->scalarNode('postRequestClass')
-            ->isRequired()
-            ->end()
-            ->scalarNode('putRequestClass')
-            ->isRequired()
-            ->end()
-            ->end()
-            ->end()
+                ->scalarNode('class')->defaultValue('cUrl\HttpBundle\Base\cUrlService')->end()
+                ->arrayNode('config')
+                    ->children()
+                        ->scalarNode('getRequestClass')->isRequired()->end()
+                        ->scalarNode('postRequestClass')->isRequired()->end()
+                        ->scalarNode('putRequestClass')->isRequired()->end()
+                    ->end()
+                ->end()
             ->end();
-
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
 
         return $treeBuilder;
     }

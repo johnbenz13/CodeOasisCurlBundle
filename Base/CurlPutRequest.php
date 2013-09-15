@@ -1,20 +1,13 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: ronena
- * Date: 8/26/12
- * Time: 9:03 AM
- * To change this template use File | Settings | File Templates.
- */
 
-namespace cUrl\HttpBundle\Base;
+namespace CodeOasis\CurlBundle\Base;
 
 /**
- * Defines a cUrl PUT request that allows sending files with the request
+ * Defines a Curl PUT request that allows sending files with the request
  *
- * @author ronena
+ * @author Ronen Amiel <ronena@codeoasis.com>
  */
-class cUrlPutRequest extends cUrlRequest
+class CurlPutRequest extends cUrlRequest
 {
     /**
      * the name (full path) of the file to send
@@ -24,6 +17,7 @@ class cUrlPutRequest extends cUrlRequest
 
     /**
      * @param mixed $ch
+     *
      * @return mixed
      */
     protected function doExecute($ch)
@@ -49,7 +43,8 @@ class cUrlPutRequest extends cUrlRequest
 
     /**
      * @param string $file
-     * @return cUrlPutRequest
+     *
+     * @return CurlPutRequest
      */
     public function setFile($file)
     {

@@ -1,20 +1,13 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: ronena
- * Date: 8/26/12
- * Time: 9:04 AM
- * To change this template use File | Settings | File Templates.
- */
 
-namespace cUrl\HttpBundle\Base;
+namespace CodeOasis\CurlBundle\Base;
 
 /**
- * Encapsulates a cUrl response and allows method to easily access the response information
+ * Encapsulates a Curl response and allows method to easily access the response information
  *
- * @author ronena
+ * @author Ronen Amiel <ronena@codeoasis.com>
  */
-class cUrlResponse
+class CurlResponse
 {
     /**
      * @var string
@@ -28,8 +21,8 @@ class cUrlResponse
 
     /**
      * constructor, takes the response body and an info array as it's parameters
-     * @param string $body
-     * @param array $info
+     * @param string    $body
+     * @param array     $info
      */
     public function __construct($body, $info)
     {

@@ -1,22 +1,17 @@
 <?php
-/**
- * Ronen Amiel <ronena@codeoasis.com>
- * 9/19/12, 3:25 PM
- * cUrlService.php
- */
 
-namespace cUrl\HttpBundle\Base;
+namespace CodeOasis\CurlBundle\Base;
 
-use cUrl\HttpBundle\Base\cUrlPostRequest;
-use cUrl\HttpBundle\Base\cUrlPutRequest;
-use cUrl\HttpBundle\Base\cUrlGetRequest;
+use CodeOasis\CurlBundle\Base\CurlPostRequest;
+use CodeOasis\CurlBundle\Base\CurlPutRequest;
+use CodeOasis\CurlBundle\Base\CurlGetRequest;
 
 /**
- * Acts as a layer for retrieving different cUrl requests
+ * Acts as a layer for retrieving different Curl requests
  *
- * @author ronena
+ * @author Ronen Amiel <ronena@codeoasis.com>
  */
-class cUrlService
+class CurlService
 {
     /**
      * @var string
@@ -44,7 +39,7 @@ class cUrlService
     }
 
     /**
-     * @return cUrlGetRequest
+     * @return CurlGetRequest
      */
     public function createGetRequest()
     {
@@ -52,7 +47,7 @@ class cUrlService
     }
 
     /**
-     * @return cUrlPostRequest
+     * @return CurlPostRequest
      */
     public function createPostRequest()
     {
@@ -60,7 +55,7 @@ class cUrlService
     }
 
     /**
-     * @return cUrlPutRequest
+     * @return CurlPutRequest
      */
     public function createPutRequest()
     {

@@ -1,13 +1,13 @@
 <?php
+
+namespace CodeOasis\CurlBundle\Exceptions;
+
 /**
- * Ronen Amiel <ronena@codeoasis.com>
- * 9/19/12, 1:32 PM
- * EmptyResponseException.php
+ * Exception
+ *
+ * @author Ronen Amiel <ronena@codeoasis.com>
  */
-
-namespace cUrl\HttpBundle\Exceptions;
-
-class UnableToInitializeException extends cUrlException
+class UnableToInitializeException extends CurlException
 {
 
 }

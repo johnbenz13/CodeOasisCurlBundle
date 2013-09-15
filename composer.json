@@ -19,7 +19,7 @@
     ],
     "minimum-stability": "dev",
     "autoload": {
-        "psr-0": {"CodeOasis\\cUrlBundle": ""}
+        "psr-0": {"CodeOasis\\CurlBundle": ""}
     },
-    "target-dir": "CodeOasis/cUrlBundle"
+    "target-dir": "CodeOasis/CurlBundle"
 }

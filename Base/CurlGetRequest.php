@@ -1,23 +1,17 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: ronena
- * Date: 8/26/12
- * Time: 9:01 AM
- * To change this template use File | Settings | File Templates.
- */
 
-namespace cUrl\HttpBundle\Base;
+namespace CodeOasis\CurlBundle\Base;
 
 /**
- * Defines a cUrl GET request
+ * Defines a Curl GET request
  *
- * @author ronena
+ * @author Ronen Amiel <ronena@codeoasis.com>
  */
-class cUrlGetRequest extends cUrlRequest
+class CurlGetRequest extends CurlRequest
 {
     /**
      * @param mixed $ch
+     *
      * @return mixed
      */
     protected function doExecute($ch)
@@ -35,7 +29,8 @@ class cUrlGetRequest extends cUrlRequest
 
     /**
      * @param string $url
-     * @param array $params
+     * @param array  $params
+     *
      * @return string
      */
     protected function buildQueryUrl($url, Array $params = array())

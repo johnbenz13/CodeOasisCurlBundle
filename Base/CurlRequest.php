@@ -1,24 +1,17 @@
 <?php
-/**
- * Created by JetBrains PhpStorm.
- * User: ronena
- * Date: 8/26/12
- * Time: 9:04 AM
- * To change this template use File | Settings | File Templates.
- */
 
-namespace cUrl\HttpBundle\Base;
+namespace CodeOasis\CurlBundle\Base;
 
-use cUrl\HttpBundle\Exceptions\EmptyResponseException;
-use cUrl\HttpBundle\Exceptions\UnableToInitializeException;
+use CodeOasis\CurlBundle\Exceptions\EmptyResponseException;
+use CodeOasis\CurlBundle\Exceptions\UnableToInitializeException;
 
 /**
- * Represents a cUrl request. Implementing methods define the doExecute method to change the cUrl handler.
+ * Represents a Curl request. Implementing methods define the doExecute method to change the cUrl handler.
  *
- * @author ronena
+ * @author Ronen Amiel <ronena@codeoasis.com>
  * @abstract
  */
-abstract class cUrlRequest
+abstract class CurlRequest
 {
     /**
      * the url for the request to be directed to
@@ -52,6 +45,8 @@ abstract class cUrlRequest
 
     /**
      * sends the request and populates the response property
+     *
+     * @return self
      */
     public function execute()
     {
@@ -70,9 +65,9 @@ abstract class cUrlRequest
         if (isset($this->headers)) {
             curl_setopt($ch, CURLOPT_HTTPHEADER, $this->headers);
         }
-        if (isset($this->cookie)){
-            curl_setopt($ch, CURLOPT_COOKIE, $this->cookie);
 
+        if (isset($this->cookie)) {
+            curl_setopt($ch, CURLOPT_COOKIE, $this->cookie);
         }
 
         // allow every implementation do it's part
@@ -99,8 +94,9 @@ abstract class cUrlRequest
 
     /**
      * implementing classes define this method to change the cUrl handler
-     * @abstract
+     *
      * @param mixed $ch
+     *
      * @return mixed
      */
     abstract protected function doExecute($ch);
@@ -114,7 +110,8 @@ abstract class cUrlRequest
 
     /**
      * @param string $url
-     * @return cUrlRequest
+     *
+     * @return CurlRequest
      */
     public function setUrl($url)
     {
@@ -133,6 +130,7 @@ abstract class cUrlRequest
 
     /**
      * @param mixed $params
+     *
      * @return cUrlRequest
      */
     public function setParams($params)
@@ -152,6 +150,7 @@ abstract class cUrlRequest
 
     /**
      * @param array $headers
+     *
      * @return cUrlRequest
      */
     public function setHeaders(Array $headers)
@@ -182,7 +181,7 @@ abstract class cUrlRequest
     }
 
     /**
-     * @param $cookie
+     * @param mixed $cookie
      */
     public function setCookie($cookie)
     {
@@ -196,5 +195,4 @@ abstract class cUrlRequest
     {
         return $this->cookie;
     }
-
 }
