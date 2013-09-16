@@ -1,6 +1,6 @@
 <?php
 
-namespace Curl\HttpBundle\Exceptions;
+namespace CodeOasis\CurlBundle\Exceptions;
 
 /**
  * Exception

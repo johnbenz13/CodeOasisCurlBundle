@@ -23,7 +23,7 @@ abstract class CurlRequest
      * parameters to send with the request
      * @var array
      */
-    protected $params;
+    protected $params = array();
 
     /**
      * http headers to send with the request
@@ -70,6 +70,11 @@ abstract class CurlRequest
             curl_setopt($ch, CURLOPT_COOKIE, $this->cookie);
         }
 
+        // if the url has not been set, it should fail
+        if (!$this->url) {
+            throw new \InvalidArgumentException("You have to set an url before calling execute.");
+        }
+
         // allow every implementation do it's part
         $ch = $this->doExecute($ch);
 
@@ -83,7 +88,7 @@ abstract class CurlRequest
         }
 
         // create a new response object
-        $this->response = new cUrlResponse($body, $info);
+        $this->response = new CurlResponse($body, $info);
 
         // close the handler
         curl_close($ch);

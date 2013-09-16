@@ -24,7 +24,7 @@ class CurlResponse
      * @param string    $body
      * @param array     $info
      */
-    public function __construct($body, $info)
+    public function __construct($body, array $info)
     {
         $this->body = $body;
         $this->info = $info;

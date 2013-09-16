@@ -33,7 +33,7 @@ class CurlGetRequest extends CurlRequest
      *
      * @return string
      */
-    protected function buildQueryUrl($url, Array $params = array())
+    protected function buildQueryUrl($url, array $params = array())
     {
         // if no params are passed, return the url as is
         if (empty($params)) {
