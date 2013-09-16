@@ -1,6 +1,6 @@
 <?php
 
-namespace CodeOasis\CurlBundle\Base;
+namespace CodeOasis\CurlBundle\Curl;
 
 use CodeOasis\CurlBundle\Base\CurlPostRequest;
 use CodeOasis\CurlBundle\Base\CurlPutRequest;
