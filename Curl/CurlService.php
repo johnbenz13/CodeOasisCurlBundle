@@ -43,7 +43,9 @@ class CurlService
      */
     public function createGetRequest()
     {
-        return new $this->getRequestClass;
+        $getRequestClass = $this->getRequestClass;
+
+        return new $getRequestClass();
     }
 
     /**
@@ -51,7 +53,9 @@ class CurlService
      */
     public function createPostRequest()
     {
-        return new $this->postRequestClass;
+        $postRequestClass = $this->postRequestClass;
+
+        return new $postRequestClass();
     }
 
     /**
@@ -59,6 +63,8 @@ class CurlService
      */
     public function createPutRequest()
     {
-        return new $this->putRequestClass;
+        $putRequestClass = $this->putRequestClass;
+
+        return new $putRequestClass();
     }
 }
