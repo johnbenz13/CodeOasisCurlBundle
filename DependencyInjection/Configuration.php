@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('class')->defaultValue('cUrl\HttpBundle\Base\cUrlService')->end()
+                ->scalarNode('class')->defaultValue('cUrl\HttpBundle\Curl\CurlService')->end()
                 ->arrayNode('config')
                     ->children()
                         ->scalarNode('getRequestClass')->isRequired()->end()

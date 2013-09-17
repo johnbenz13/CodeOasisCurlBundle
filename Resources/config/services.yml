@@ -1,4 +1,0 @@
-services:
-    curl:
-        class:  %curl.class%
-        arguments: [%curl.config%]
