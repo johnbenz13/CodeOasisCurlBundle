@@ -22,12 +22,13 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-                ->scalarNode('class')->defaultValue('cUrl\HttpBundle\Curl\CurlService')->end()
+                ->scalarNode('class')->defaultValue('CodeOasis\CurlBundle\Curl\CurlService')->end()
                 ->arrayNode('config')
+                    ->prototype('array')
                     ->children()
-                        ->scalarNode('getRequestClass')->isRequired()->end()
-                        ->scalarNode('postRequestClass')->isRequired()->end()
-                        ->scalarNode('putRequestClass')->isRequired()->end()
+                        ->scalarNode('getRequestClass')->defaultValue('CodeOasis\CurlBundle\Base\CurlGetRequest')->end()
+                        ->scalarNode('postRequestClass')->defaultValue('CodeOasis\CurlBundle\Base\CurlPostRequest')->end()
+                        ->scalarNode('putRequestClass')->defaultValue('CodeOasis\CurlBundle\Base\CurlPutRequest')->end()
                     ->end()
                 ->end()
             ->end();
