@@ -26,6 +26,12 @@ class CodeOasisCurlExtension extends Extension
         $loader->load('services.xml');
 
         $container->setParameter('curl.class', $config['class']);
-        $container->setParameter('curl.config', $config['config']);
+
+        $this->loadCurlOptions($container, $config['config']);
+    }
+
+    private function loadCurlOptions(ContainerBuilder $container, array $options)
+    {
+        $container->getDefinition('curl')->replaceArgument(0, $options);
     }
 }

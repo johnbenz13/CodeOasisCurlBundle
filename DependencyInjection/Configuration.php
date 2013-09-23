@@ -24,7 +24,7 @@ class Configuration implements ConfigurationInterface
             ->children()
                 ->scalarNode('class')->defaultValue('CodeOasis\CurlBundle\Curl\CurlService')->end()
                 ->arrayNode('config')
-                    ->prototype('array')
+                    ->addDefaultsIfNotSet()
                     ->children()
                         ->scalarNode('getRequestClass')->defaultValue('CodeOasis\CurlBundle\Base\CurlGetRequest')->end()
                         ->scalarNode('postRequestClass')->defaultValue('CodeOasis\CurlBundle\Base\CurlPostRequest')->end()

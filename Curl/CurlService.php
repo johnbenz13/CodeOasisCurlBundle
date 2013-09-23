@@ -29,13 +29,13 @@ class CurlService
     protected $putRequestClass;
 
     /**
-     * @param array $config
+     * @param array $options
      */
-    public function __construct(Array $config)
+    public function __construct(array $options)
     {
-        $this->getRequestClass = $config['getRequestClass'];
-        $this->postRequestClass = $config['postRequestClass'];
-        $this->putRequestClass = $config['putRequestClass'];
+        $this->getRequestClass = $options['getRequestClass'];
+        $this->postRequestClass = $options['postRequestClass'];
+        $this->putRequestClass = $options['putRequestClass'];
     }
 
     /**

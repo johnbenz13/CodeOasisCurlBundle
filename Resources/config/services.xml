@@ -5,7 +5,7 @@
 
     <services>
         <service id="curl" class="%curl.class%">
-            <argument>%curl.config%</argument>
+            <argument type="collection" />
         </service>
     </services>
 </container>
